@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dogefaucet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dogefaucet</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="alert alert-info">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <div class="col-md-6">
+      {% block body %}{% endblock %}
+      </div>
+      <div class="col-md-6">
+        <h5>Support your local Dogefaucet</h5>
+        <p>
+          After an initial &#393;10,000 float, this Dogefaucet is run on donations.
+          Please give generously to <code>{{ g.doge_address }}</code>
+        </p>
+      </div>
+      <div class="col-md-12" style="margin-top: 5em">
+        <p>Powered by <a href="https://github.com/insom/dogefaucet">Dogefaucet</a> and
+        <a href="https://github.com/insom/flask-coin">Flask-Coin</a>, written by
+        <a href="http://insom.me.uk">Aaron Brady</a> (tips to: <code>DF6Y2j6vmP1fnnZMSqxL5auRk8mfJK5vSp</code> )</p>
+      </div>
+    </div>
+  </body>
+</html>
